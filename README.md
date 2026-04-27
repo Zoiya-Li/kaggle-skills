@@ -1,5 +1,7 @@
 # kaggle-skills
 
+![kaggle-skills framework](./framework.png)
+
 Skills for Claude Code that help you get to strong Kaggle results faster.
 
 This repo is built around one idea: less glue work, fewer confused submission loops, and a more direct path from competition brief to real leaderboard progress.
