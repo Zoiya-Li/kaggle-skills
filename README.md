@@ -1,8 +1,12 @@
-# Claude Skills Open
+# kaggle-skills
 
 An open skill pack for Claude Code / Codex-style local agents.
 
-> Competition pipelines, research workflows, experiment loops, and writing systems for agents that need to do real work.
+> Kaggle pipelines, research workflows, experiment loops, and writing systems for agents that need to do real work.
+
+**Suggested GitHub description**
+
+`Open skill pack for Claude Code: Kaggle pipelines, research workflows, experiment loops, and writing systems.`
 
 This repository is a cleaned export of a working skill library focused on real project execution rather than one-off demos. It is designed for people who want reusable local-agent workflows for competitions, research, experiments, writing, and operational discipline.
 
@@ -151,7 +155,7 @@ Clone the repository and install it into your preferred local agent skills direc
 
 ```bash
 git clone <your-repo-url>
-cd claude-skills-open
+cd kaggle-skills
 bash install.sh --claude
 ```
 
@@ -159,7 +163,7 @@ bash install.sh --claude
 
 ```bash
 git clone <your-repo-url>
-cd claude-skills-open
+cd kaggle-skills
 bash install.sh --codex
 ```
 
@@ -255,7 +259,7 @@ If these are unavailable in your environment, the preferred behavior is graceful
 
 ## Naming Note
 
-The repository is currently exported under a generic local folder name, but it can be published under any public name you prefer, including a more domain-specific one such as `kaggle-skills`.
+The repository is intended to be published as `kaggle-skills`.
 
 ## Publishing Checklist
 

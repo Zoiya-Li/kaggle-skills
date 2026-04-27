@@ -1,0 +1,1 @@
+Open skill pack for Claude Code: Kaggle pipelines, research workflows, experiment loops, and writing systems.
