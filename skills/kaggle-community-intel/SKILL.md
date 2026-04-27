@@ -24,8 +24,11 @@ Run it aggressively enough that the project does not drift away from the competi
 - rule clarifications
 - shake-up or leaderboard-risk signals
 
-Use native `WebSearch` and `WebFetch` first. Do not substitute `curl`, Bash scraping, or `searxng` MCP tools for routine discovery.
-If native search or fetch is unavailable, stop pretending discovery is complete, record the gap, and ask the user for direct links or pasted content.
+For Kaggle discussions and notebooks, prefer an authenticated official Kaggle access path when one is available through the current environment, because public fetches often see only shell pages.
+Treat `KAGGLE_API_TOKEN` or `~/.kaggle/kaggle.json` as a first-class clue that Kaggle-authenticated access may be part of the workflow, not just submissions.
+Do not assume the Kaggle CLI or API can always return full discussion bodies. Verify what the authenticated path can actually read in the current environment before relying on it.
+Use the normal native discovery and page-reading path as the fallback layer. Do not substitute `curl`, Bash scraping, or machine-specific search tooling for routine discovery.
+If native access, authenticated Kaggle access, or the normal page-reading path is unavailable, stop pretending discovery is complete, record the gap, and ask the user for direct links or pasted content.
 If a Kaggle or notebook page is JS-rendered and fetch returns only a title or shell page, record it as inaccessible through the current tool path rather than treating it as reviewed.
 
 ## For Each Finding

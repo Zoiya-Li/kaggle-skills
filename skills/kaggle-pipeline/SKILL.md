@@ -15,10 +15,10 @@ Read `../kaggle-shared-references/artifact-contracts.md` before writing or updat
 
 ## Core Rules
 
-- Use only the built-in native web search and page-reading tools for competition pages, rules, and discussions.
-- Do not call `searxng` MCP tools from this skill pack.
-- Do not use `curl`, ad hoc Bash web scraping, or other non-native search/fetch substitutes when `WebSearch` or `WebFetch` can do the job.
-- If native search or fetch is unavailable, say so explicitly and continue only from directly accessible sources or user-provided links.
+- Prefer native, built-in, or officially authenticated access paths for competition pages, rules, discussions, notebooks, and account-scoped resources.
+- Do not bake machine-specific search stacks or private local tooling assumptions into the workflow.
+- Do not use `curl`, ad hoc Bash scraping, or other improvised fetch paths as the default when cleaner native or official access exists.
+- If the normally available native or official access path is unavailable in the current environment, say so explicitly and continue only from directly accessible sources or user-provided links.
 - Treat credentials, API tokens, cookies, SSH passwords, and downloaded secrets as sensitive material. Do not copy them into artifacts, memory files, summaries, or long-lived notes. If a user pastes a secret, use it only for the immediate step and avoid reprinting it.
 - Keep `kaggle/COMMUNITY_LOG.md` and `kaggle/EXPERIMENT_LOG.md` active throughout the competition.
 - Resume from existing artifacts when possible.

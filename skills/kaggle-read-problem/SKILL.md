@@ -11,7 +11,7 @@ Understand the competition at: **$ARGUMENTS**
 
 Write `kaggle/PROBLEM_BRIEF.md`.
 
-Use native `WebSearch` and `WebFetch` first. Do not substitute `curl`, Bash scraping, or `searxng` MCP tools for routine competition reading.
+Prefer native, built-in, or officially authenticated access paths for routine competition reading. Do not substitute `curl`, Bash scraping, or machine-specific search tooling when cleaner native or official access exists.
 If community context has not been reviewed yet, invoke `/kaggle-community-intel`.
 
 ## Answer These
