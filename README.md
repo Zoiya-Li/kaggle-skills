@@ -2,13 +2,20 @@
 
 An open skill pack for Claude Code / Codex-style local agents.
 
-> Kaggle pipelines, research workflows, experiment loops, and writing systems for agents that need to do real work.
+> Built for one thing first: getting to strong competition results with less thrash, less glue work, and fewer avoidable mistakes.
 
 **Suggested GitHub description**
 
-`Open skill pack for Claude Code: Kaggle pipelines, research workflows, experiment loops, and writing systems.`
+`Open skill pack for Claude Code, optimized for Kaggle-style workflows and pain-reduced paths to strong results.`
 
 This repository is a cleaned export of a working skill library focused on real project execution rather than one-off demos. It is designed for people who want reusable local-agent workflows for competitions, research, experiments, writing, and operational discipline.
+
+The center of gravity is simple:
+
+- spend less time wiring things together
+- spend less time repeating the same analysis by hand
+- spend fewer submission slots on confused experiments
+- reach strong baselines and prize-worthy branches faster
 
 Core themes:
 
@@ -38,8 +45,19 @@ This repository is trying to solve a harder problem: how to make local coding ag
 - search, compare, and revise hypotheses
 - use submissions and experiments as feedback loops
 - recover from failures without losing the thread
+- keep pushing toward results instead of getting stuck in clever but low-yield loops
 
 The result is a skill pack that is closer to a workflow operating system than a bag of prompts.
+
+For Kaggle in particular, the ambition is not “beautiful prompt engineering.”
+
+It is:
+
+- less wasted motion
+- fewer self-inflicted errors
+- faster iteration
+- stronger submissions
+- and, ideally, a more painless route to medals
 
 ## Philosophy
 
@@ -52,6 +70,7 @@ They favor:
 - labeling evidence carefully instead of drifting into optimistic claims
 - using artifacts, logs, and state files as first-class coordination tools
 - balancing ambitious exploration with concrete execution loops
+- finding high-upside branches early instead of polishing low-value ideas forever
 
 In other words, this pack tries to make local agents more useful on messy, multi-step projects where a single good answer is less important than sustained progress.
 
@@ -87,6 +106,7 @@ It is less useful if you only want a few tiny standalone prompts with no file or
 - community intelligence and discussion mining
 - CV design, feature loops, pseudo-labeling, ensembling, finalization
 - artifact auditing, submission loops, and leaderboard-aware iteration
+- explicit focus on faster paths to strong leaderboard results
 
 ### Research
 
@@ -117,6 +137,8 @@ It is less useful if you only want a few tiny standalone prompts with no file or
 ### Kaggle Competition Harness
 
 Start from rules and community signals, move through problem framing and validation design, iterate with disciplined experiment loops, and finish with audited submissions.
+
+The intended feel is not “maximally academic.” It is “get to a real contender faster, with less avoidable pain.”
 
 Relevant entry points:
 
@@ -219,6 +241,13 @@ If you want the shortest route to understanding the style of the repo, start wit
 2. `skills/kaggle-pipeline/SKILL.md`
 3. `skills/research-pipeline/SKILL.md`
 
+If your main goal is medals rather than infrastructure aesthetics, start with:
+
+1. `skills/kaggle-pipeline/SKILL.md`
+2. `skills/kaggle-community-intel/SKILL.md`
+3. `skills/kaggle-feature-loop/SKILL.md`
+4. `skills/kaggle-finalizer/SKILL.md`
+
 ## Design Notes
 
 - Skills are written to be useful in real projects, not just demos.
@@ -233,6 +262,7 @@ If you want the shortest route to understanding the style of the repo, start wit
 - They distinguish official, first-hand, community, and inferred evidence.
 - They try to stop the common failure mode where the agent's narrative becomes more confident than reality.
 - They are designed to be edited, remixed, and specialized further.
+- They are biased toward outcome density: fewer decorative steps, more progress toward a submission, result, or paper.
 
 ## Safety And Cleanup
 
