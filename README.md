@@ -93,43 +93,6 @@ If you want to understand the workflow style behind the repo:
 
 Full index: [catalog.md](./catalog.md)
 
-## What Is Opinionated Here
-
-These skills assume that agents should:
-
-- keep resumable state
-- separate official / first-hand / community / inferred evidence
-- treat submissions as feedback loops, not ceremony
-- avoid calling things `ready` or `submitted` without checking
-- update artifacts so future sessions do not have to reconstruct context from chat history
-
-If you do not want that style, you will probably want to edit the skills before using them heavily.
-
-## Optional Dependencies
-
-Some skills mention optional integrations:
-
-- Kaggle CLI
-- W&B
-- Feishu / Lark
-- Vast.ai
-- Modal
-- external LLM APIs
-
-They are optional. The repo is still useful without all of them.
-
-## Repo Layout
-
-```text
-.
-├── README.md
-├── catalog.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── install.sh
-└── skills/
-```
-
 ## GitHub Description
 
 `Open skill pack for Claude Code, focused on Kaggle workflows, experiment loops, and practical research execution.`
