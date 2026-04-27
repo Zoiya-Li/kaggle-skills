@@ -10,7 +10,6 @@ This repo is built around one idea: less glue work, fewer confused submission lo
 - discussion and community mining
 - experiment and submission loops
 - state files and artifact discipline for long sessions
-- optional research / experiment / writing skills around the same stack
 
 ## Install
 
@@ -50,9 +49,7 @@ If you want to understand the workflow style behind the repo:
 
 - `skills/shared-references/operational-hygiene.md`
 
-## Main Skill Groups
-
-### Kaggle
+## Included Skills
 
 - `kaggle-pipeline`
 - `kaggle-community-intel`
@@ -63,39 +60,13 @@ If you want to understand the workflow style behind the repo:
 - `kaggle-pseudo-label`
 - `kaggle-ensemble-lab`
 - `kaggle-finalizer`
-
-### Execution
-
-- `run-experiment`
-- `monitor-experiment`
-- `training-check`
-- `system-profile`
-- `vast-gpu`
-- `serverless-modal`
-
-### Research
-
-- `idea-discovery`
-- `research-pipeline`
-- `research-refine`
-- `experiment-plan`
-- `result-to-claim`
-- `research-review`
-
-### Writing
-
-- `paper-writing`
-- `paper-plan`
-- `paper-write`
-- `paper-figure`
-- `paper-slides`
-- `paper-poster`
+- `shared-references/operational-hygiene.md`
 
 Full index: [catalog.md](./catalog.md)
 
 ## GitHub Description
 
-`Open skill pack for Claude Code, focused on Kaggle workflows, experiment loops, and practical research execution.`
+`Open Kaggle skill pack for Claude Code, focused on leaderboard iteration, submission discipline, and practical workflow structure.`
 
 ## License
 
