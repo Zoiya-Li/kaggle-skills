@@ -1,1 +1,1 @@
-Open skill pack for Claude Code, optimized for Kaggle-style workflows and pain-reduced paths to strong results.
+Open skill pack for Claude Code, focused on Kaggle workflows, experiment loops, and practical research execution.

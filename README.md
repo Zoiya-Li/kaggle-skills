@@ -1,322 +1,157 @@
 # kaggle-skills
 
-An open skill pack for Claude Code / Codex-style local agents.
+Open skill pack for Claude Code, focused on Kaggle workflows and adjacent research / experiment tasks.
 
-> Built for one thing first: getting to strong competition results with less thrash, less glue work, and fewer avoidable mistakes.
+## What This Repo Is
 
-**Suggested GitHub description**
+This repo is a cleaned export of a personal skill library. The center of gravity is Kaggle:
 
-`Open skill pack for Claude Code, optimized for Kaggle-style workflows and pain-reduced paths to strong results.`
+- reading rules and discussions
+- planning a competition strategy
+- running experiment loops
+- managing submissions
+- keeping state files and logs usable across long sessions
 
-This repository is a cleaned export of a working skill library focused on real project execution rather than one-off demos. It is designed for people who want reusable local-agent workflows for competitions, research, experiments, writing, and operational discipline.
+It also includes research, experiment, and writing skills that are useful around the same workflow.
 
-The center of gravity is simple:
+If you want a short mental model:
 
-- spend less time wiring things together
-- spend less time repeating the same analysis by hand
-- spend fewer submission slots on confused experiments
-- reach strong baselines and prize-worthy branches faster
+- `kaggle-*` = competition workflow
+- `research-*` = idea / review / planning workflow
+- `run-experiment` / `monitor-experiment` = execution workflow
+- `shared-references/*` = house rules for evidence, state, and artifact hygiene
 
-Core themes:
+## Install
 
-- Kaggle pipelines
-- research ideation and review
-- experiment execution and monitoring
-- paper writing and figure generation
-- shared operational hygiene for long-running agent workflows
+Clone the repo:
 
-The goal is not just to provide isolated prompts, but to provide reusable, composable execution skills with:
+```bash
+git clone https://github.com/Zoiya-Li/kaggle-skills.git
+cd kaggle-skills
+```
 
-- resumable artifacts
-- evidence discipline
-- submission and experiment loops
-- optional hosted compute workflows
-- practical research and competition scaffolding
-- explicit failure and recovery patterns
+Install into Claude Code:
 
-## Why This Repository Exists
+```bash
+bash install.sh --claude
+```
 
-Most prompt collections are good at giving a model a nicer starting instruction.
+Install into Codex-style skills:
 
-This repository is trying to solve a harder problem: how to make local coding agents more reliable across long, messy, multi-step projects where they need to:
+```bash
+bash install.sh --codex
+```
 
-- keep state across runs
-- write and update artifacts
-- search, compare, and revise hypotheses
-- use submissions and experiments as feedback loops
-- recover from failures without losing the thread
-- keep pushing toward results instead of getting stuck in clever but low-yield loops
+Install into a custom path:
 
-The result is a skill pack that is closer to a workflow operating system than a bag of prompts.
+```bash
+bash install.sh --target /path/to/skills
+```
 
-For Kaggle in particular, the ambition is not “beautiful prompt engineering.”
+The installer copies `skills/` into the target directory. It does not delete existing skills.
 
-It is:
+## Best Starting Points
 
-- less wasted motion
-- fewer self-inflicted errors
-- faster iteration
-- stronger submissions
-- and, ideally, a more painless route to medals
+If you only want the Kaggle part, start here:
 
-## Philosophy
+- `skills/kaggle-pipeline/SKILL.md`
+- `skills/kaggle-community-intel/SKILL.md`
+- `skills/kaggle-feature-loop/SKILL.md`
+- `skills/kaggle-finalizer/SKILL.md`
+- `skills/kaggle-shared-references/artifact-contracts.md`
 
-These skills are opinionated.
+If you want the general workflow style first, read:
 
-They favor:
+- `skills/shared-references/operational-hygiene.md`
 
-- doing real work over stopping at analysis
-- keeping long-running projects resumable
-- labeling evidence carefully instead of drifting into optimistic claims
-- using artifacts, logs, and state files as first-class coordination tools
-- balancing ambitious exploration with concrete execution loops
-- finding high-upside branches early instead of polishing low-value ideas forever
+If you want experiment execution:
 
-In other words, this pack tries to make local agents more useful on messy, multi-step projects where a single good answer is less important than sustained progress.
+- `skills/run-experiment/SKILL.md`
+- `skills/monitor-experiment/SKILL.md`
 
-## What Is Included
-
-- `skills/`: the skill pack itself
-- `skills/shared-references/`: reusable cross-skill guidance
-- `skills/kaggle-shared-references/`: Kaggle-specific references and templates
-
-Current export size:
-
-- `58` primary `SKILL.md` skills
-- plus shared references, templates, and support files
-
-See [catalog.md](./catalog.md) for a categorized index.
-
-## Who This Is For
-
-This repository is most useful if you:
-
-- run Claude Code or a similar local coding agent regularly
-- want repeatable workflows for Kaggle or ML experimentation
-- do research or paper writing with iterative review loops
-- care about keeping experiments, state, and decisions organized
-
-It is less useful if you only want a few tiny standalone prompts with no file or workflow conventions.
-
-## Highlights
+## Skill Groups
 
 ### Kaggle
 
 - end-to-end competition harness
-- community intelligence and discussion mining
-- CV design, feature loops, pseudo-labeling, ensembling, finalization
-- artifact auditing, submission loops, and leaderboard-aware iteration
-- explicit focus on faster paths to strong leaderboard results
+- community intelligence
+- problem reading
+- EDA
+- CV design
+- feature / experiment loop
+- pseudo-labeling
+- ensembling
+- final submission planning
 
 ### Research
 
 - idea discovery
 - novelty checking
 - experiment planning
-- implementation bridge
 - result-to-claim review
 - autonomous review loops
 
 ### Writing
 
 - paper planning
-- section drafting
+- drafting
 - figure generation
-- poster and slide generation
-- compile and polish loops
+- slides / poster generation
+- compile and improvement loops
 
 ### Execution
 
 - local / remote experiment launch
 - monitoring
+- profiling
 - GPU workflow helpers
-- system profiling
 
-## Featured Workflows
+See [catalog.md](./catalog.md) for the full index.
 
-### Kaggle Competition Harness
+## What Is Opinionated Here
 
-Start from rules and community signals, move through problem framing and validation design, iterate with disciplined experiment loops, and finish with audited submissions.
+These skills are not neutral.
 
-The intended feel is not “maximally academic.” It is “get to a real contender faster, with less avoidable pain.”
+They assume that agents should:
 
-Relevant entry points:
+- keep resumable artifacts
+- separate official / first-hand / community / inferred evidence
+- avoid calling something `ready` or `submitted` without checking
+- use submissions and experiments as explicit feedback loops
+- update project state instead of forcing later sessions to reconstruct context from chat history
 
-- `skills/kaggle-pipeline/SKILL.md`
-- `skills/kaggle-community-intel/SKILL.md`
-- `skills/kaggle-feature-loop/SKILL.md`
-- `skills/kaggle-finalizer/SKILL.md`
+If you do not want that style, you will probably want to edit the skills before using them heavily.
 
-### End-to-End Research Pipeline
+## Optional Dependencies
 
-Move from idea discovery to novelty checking, experiment planning, implementation, result review, and paper writing.
-
-Relevant entry points:
-
-- `skills/research-pipeline/SKILL.md`
-- `skills/idea-discovery/SKILL.md`
-- `skills/experiment-plan/SKILL.md`
-- `skills/result-to-claim/SKILL.md`
-
-### Experiment Execution And Monitoring
-
-Run local or remote experiments, watch them, collect outputs, and keep the project resumable.
-
-Relevant entry points:
-
-- `skills/run-experiment/SKILL.md`
-- `skills/monitor-experiment/SKILL.md`
-- `skills/training-check/SKILL.md`
-- `skills/shared-references/operational-hygiene.md`
-
-## Quick Start
-
-Clone the repository and install it into your preferred local agent skills directory.
-
-### Claude Code
-
-```bash
-git clone <your-repo-url>
-cd kaggle-skills
-bash install.sh --claude
-```
-
-### Codex-style Skills
-
-```bash
-git clone <your-repo-url>
-cd kaggle-skills
-bash install.sh --codex
-```
-
-After installation, restart the client if needed so the new skills are re-indexed.
-
-## Installation
-
-### Option 1: Install into Claude Code
-
-```bash
-bash install.sh --claude
-```
-
-This copies the repository's `skills/` contents into:
-
-```bash
-~/.claude/skills
-```
-
-### Option 2: Install into Codex-style skills
-
-```bash
-bash install.sh --codex
-```
-
-This copies the repository's `skills/` contents into:
-
-```bash
-~/.codex/skills
-```
-
-### Option 3: Custom destination
-
-```bash
-bash install.sh --target /path/to/skills
-```
-
-The installer copies the contents of `skills/` into the chosen destination. It does not delete existing skills.
-
-## Suggested Starting Points
-
-If you want to explore the pack quickly, these are good entry points:
-
-- `skills/kaggle-pipeline/SKILL.md`
-- `skills/research-pipeline/SKILL.md`
-- `skills/run-experiment/SKILL.md`
-- `skills/paper-writing/SKILL.md`
-- `skills/shared-references/operational-hygiene.md`
-
-If you want the shortest route to understanding the style of the repo, start with:
-
-1. `skills/shared-references/operational-hygiene.md`
-2. `skills/kaggle-pipeline/SKILL.md`
-3. `skills/research-pipeline/SKILL.md`
-
-If your main goal is medals rather than infrastructure aesthetics, start with:
-
-1. `skills/kaggle-pipeline/SKILL.md`
-2. `skills/kaggle-community-intel/SKILL.md`
-3. `skills/kaggle-feature-loop/SKILL.md`
-4. `skills/kaggle-finalizer/SKILL.md`
-
-## Design Notes
-
-- Skills are written to be useful in real projects, not just demos.
-- Many skills intentionally write or depend on long-lived artifacts such as experiment logs, pipeline state, and review notes.
-- Some skills reference optional local integrations such as Feishu notifications, Kaggle CLI auth, W&B, Vast.ai, or Modal. These are optional and should degrade gracefully when unavailable.
-- No real secrets are included in this export. Example environment variable names and config paths remain in place because they are part of the workflow documentation.
-
-## What Makes These Skills Different
-
-- They are workflow-oriented, not single-shot.
-- They assume artifacts matter.
-- They distinguish official, first-hand, community, and inferred evidence.
-- They try to stop the common failure mode where the agent's narrative becomes more confident than reality.
-- They are designed to be edited, remixed, and specialized further.
-- They are biased toward outcome density: fewer decorative steps, more progress toward a submission, result, or paper.
-
-## Safety And Cleanup
-
-This export intentionally omits local dependency caches such as `web-access/node_modules`.
-
-Before publishing publicly, it is still a good idea to do one more repo-level review for:
-
-- private paths you no longer want to expose
-- organization-specific service names
-- references to local scripts or accounts that should be generalized further
-
-## Optional Integrations
-
-Some skills mention optional integrations. These are not required for the repository to be useful.
+Some skills mention optional integrations:
 
 - Kaggle CLI
 - W&B
-- Feishu / Lark notifications
+- Feishu / Lark
 - Vast.ai
 - Modal
 - external LLM APIs
 
-If these are unavailable in your environment, the preferred behavior is graceful degradation rather than hard failure.
+They are not required for the whole repo to be useful.
 
-## Naming Note
-
-The repository is intended to be published as `kaggle-skills`.
-
-## Publishing Checklist
-
-Before pushing to a public GitHub repository, I recommend checking:
-
-1. No private credentials or tokens are present anywhere in tracked files.
-2. Any organization-specific references are either acceptable or generalized.
-3. `README.md` reflects the scope you actually want to support publicly.
-4. Optional integrations are documented clearly enough that users know what is required.
-5. Large generated files, local caches, and dependency directories are excluded.
-
-## Repository Layout
+## Repo Layout
 
 ```text
 .
-├── .gitignore
-├── CONTRIBUTING.md
 ├── README.md
-├── LICENSE
 ├── catalog.md
+├── CONTRIBUTING.md
+├── LICENSE
 ├── install.sh
 └── skills/
 ```
 
-## Contributing
+## GitHub Description
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md).
+Short version for the GitHub repo description:
+
+`Open skill pack for Claude Code, focused on Kaggle workflows, experiment loops, and practical research execution.`
 
 ## License
 
